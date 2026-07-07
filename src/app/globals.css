@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4f8ff;
+  --foreground: #0f172a;
+  --muted-foreground: #4f5f7a;
+  --surface: #ffffff;
+  --surface-strong: #08152b;
+  --surface-soft: #edf4ff;
+  --border: rgba(148, 163, 184, 0.28);
+  --ring: rgba(59, 130, 246, 0.24);
+  --primary: #2563eb;
+  --primary-strong: #1d4ed8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-surface-soft: var(--surface-soft);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --font-sans: "Segoe UI", "SF Pro Display", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "SFMono-Regular", "Cascadia Code", "Roboto Mono", ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", "SF Pro Display", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  background-image:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.28), transparent 30%),
+    linear-gradient(180deg, #dbeafe 0%, #eff6ff 42%, #f8fbff 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
 }
